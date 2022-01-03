@@ -1,7 +1,6 @@
 <script>
 	import { send, receive } from '@libs/crossfade';
 	import { fade } from 'svelte/transition';
-	import About from './ [lang]/about.svelte';
 </script>
 
 <main transition:fade={{ duration: 300 }}>
@@ -25,51 +24,3 @@
 	</div>
 	<p>Blog</p>
 </main>
-
-<style>
-	a,
-	a:visited {
-		text-decoration: none;
-	}
-
-	.box {
-		width: 50%;
-		height: 50%;
-		border: 1px solid black;
-		position: fixed;
-
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-
-	.box:hover {
-		cursor: pointer;
-	}
-
-	.top-left {
-		background-color: pink;
-
-		top: 0;
-		left: 0;
-	}
-
-	.top-right {
-		background-color: blue;
-
-		top: 0;
-		left: 50%;
-	}
-
-	.bottom-left {
-		background-color: green;
-		top: 50%;
-		left: 0;
-	}
-
-	.bottom-right {
-		background-color: yellow;
-		top: 50%;
-		left: 50%;
-	}
-</style>

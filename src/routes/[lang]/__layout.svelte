@@ -1,10 +1,9 @@
 <script context="module">
 	// TODO
-	/** @type {import('@sveltejs/kit').Load} */
-	export async function load({ page, stuff }) {
+	export async function load({ params }) {
 		return {
 			stuff: {
-				lang: page.params.lang
+				lang: params?.lang
 			}
 		};
 	}

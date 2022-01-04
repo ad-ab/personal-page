@@ -3,17 +3,18 @@
 	import { fade } from 'svelte/transition';
 
 	import { t } from '@libs/translations';
+	import Link from '@components/link';
 </script>
 
 <main transition:fade={{ duration: 300 }}>
 	<div class="grid">
-		<a href="cs/about">
+		<Link href="cs/about">
 			<div class="box top-left">
 				<h1 class="link" out:send={{ key: 'about' }} in:receive={{ key: 'about' }}>
 					{$t('menu.about')}
 				</h1>
 			</div>
-		</a>
+		</Link>
 		<a href="cs/blog">
 			<div class="box top-right">
 				<div out:send={{ key: 'blog' }} in:receive={{ key: 'blog' }}>{$t('menu.projects')}</div>

@@ -1,12 +1,11 @@
 <script context="module">
-	import { t, locale, locales, loadTranslations } from '@libs/translations';
+	import { t, locale, locales, loadTranslations } from '../libs/translations/index';
 
-	/** @type {import('@sveltejs/kit').Load} */
-	export const load = async ({ stuff, page }) => {
-		const { path } = page;
+	export const load = async ({ stuff, url }) => {
+		const { pathname } = url;
 
 		const locale = 'en'; // get from cookie or user session...
-		await loadTranslations(locale, path);
+		await loadTranslations(locale, pathname);
 
 		return {
 			stuff: {
@@ -14,16 +13,6 @@
 			}
 		};
 	};
-
-	// TODO
-	/** @type {import('@sveltejs/kit').Load} */
-	// export async function load({ page, stuff }) {
-	// 	return {
-	// 		stuff: {
-	// 			lang: page.params.lang
-	// 		}
-	// 	};
-	// }
 </script>
 
 <slot />

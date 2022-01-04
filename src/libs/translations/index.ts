@@ -1,9 +1,8 @@
-import i18n, { Config } from 'sveltekit-i18n';
+import type { Config as ConfigType } from 'sveltekit-i18n';
+import i18n from 'sveltekit-i18n';
 import lang from './lang.json';
 
-import { derived } from 'svelte/store';
-
-export const config: Config = {
+const Config: ConfigType = {
 	loaders: [
 		{
 			locale: 'en',
@@ -52,6 +51,6 @@ export const config: Config = {
 	]
 };
 
-export const { t, loading, locales, locale, loadTranslations } = new i18n(config);
+export const { t, loading, locales, locale, loadTranslations } = new i18n(Config);
 
 loading.subscribe(($loading) => $loading && console.log('Loading translations...'));

@@ -1,12 +1,12 @@
 <script>
 	import { send, receive } from '@libs/crossfade';
-	import { fade } from 'svelte/transition';
-
 	import { t } from '@libs/translations';
-	import Link from '@components/link';
+
+	import Main from '@components/main.svelte';
+	import Link from '@components/link.svelte';
 </script>
 
-<main transition:fade={{ duration: 300 }}>
+<Main>
 	<div class="grid">
 		<Link href="cs/about">
 			<div class="box top-left">
@@ -15,35 +15,29 @@
 				</h1>
 			</div>
 		</Link>
-		<a href="cs/blog">
+		<Link href="cs/blog">
 			<div class="box top-right">
 				<div out:send={{ key: 'blog' }} in:receive={{ key: 'blog' }}>{$t('menu.projects')}</div>
 			</div>
-		</a>
-		<a href="cs/contact">
+		</Link>
+		<Link href="cs/contact">
 			<div class="box bottom-left">
 				<div out:send={{ key: 'contect' }} in:receive={{ key: 'contact' }}>
 					{$t('menu.contact')}
 				</div>
 			</div>
-		</a>
-		<a href="cs/resume">
+		</Link>
+		<Link href="cs/resume">
 			<div class="box bottom-right">
 				<div out:send={{ key: 'resume' }} in:receive={{ key: 'resume' }}>
 					{$t('menu.resume')}
 				</div>
 			</div>
-		</a>
+		</Link>
 	</div>
-	<p>Blog</p>
-</main>
+</Main>
 
 <style>
-	a,
-	a:visited {
-		text-decoration: none;
-	}
-
 	.box {
 		width: 50%;
 		height: 50%;

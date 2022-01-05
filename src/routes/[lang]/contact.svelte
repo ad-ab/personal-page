@@ -1,9 +1,9 @@
 <script>
 	import { send, receive } from '@src/libs/crossfade';
-	import { fade } from 'svelte/transition';
+	import Main from '@components/main.svelte';
 </script>
 
-<main transition:fade={{ duration: 300 }}>
-	<h1 out:send={{ key: 'about' }} in:receive={{ key: 'about' }}>About</h1>
+<Main>
+	<h1 out:send={{ key: 'contact' }} in:receive={{ key: 'contact' }}>Contact</h1>
 	<p>Some stuff about stuff</p>
-</main>
+</Main>

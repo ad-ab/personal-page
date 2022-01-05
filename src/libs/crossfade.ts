@@ -1,7 +1,9 @@
 import { quintOut } from 'svelte/easing'
 import { crossfade } from 'svelte/transition'
 
-const speed = 600
+import { duration } from '@src/constants'
+
+const speed = duration * 2;
 
 const [send, receive] = crossfade({
   easing: quintOut,

@@ -5,3 +5,9 @@
 </script>
 
 <main transition:fade={{ duration }}><slot /></main>
+
+<style>
+	main {
+		width: 100%;
+	}
+</style>
